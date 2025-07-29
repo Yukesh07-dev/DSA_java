@@ -1,0 +1,45 @@
+package Dsa_prac;
+import java.util.Scanner;
+
+public class Dsa { 
+	public static int[] selectionSort (int arr[],int i ) {
+		for (i=0;i<arr.length-1;i++) {
+			int minIndex=i;
+			int temp;
+			for ( int j=i+1;j<arr.length;j++) {
+				if(arr[minIndex] > arr[j]) {
+					minIndex=j;
+				}
+				
+			}
+			temp =  arr[minIndex];
+			arr[minIndex]=arr[i];
+			arr[i]=temp;
+		}
+		return arr;
+	}
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int arr[]=new int[n];
+		int i , minIndex ,temp;
+		int j;
+		for (i=0;i<arr.length;i++) {
+			arr[i]=sc.nextInt();
+		}
+		System.out.println("before swapping :");
+		for(i=0;i<=arr.length-1;i++) {
+			System.out.print(arr[i] +  " ");
+		}
+		
+		int num [] =selectionSort(arr ,i );
+		
+		System.out.println();
+		System.out.println("after swapping :");
+		for ( i=0;i<=arr.length-1;i++) {
+		System.out.print(num[i]+ " ");
+		}
+	}
+}
+		
+
